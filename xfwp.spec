@@ -1,6 +1,6 @@
 Name:		xfwp
-Version:	1.0.1
-Release:	%mkrel 9
+Version:	1.0.2
+Release:	%mkrel 1
 Summary:	X firewall proxy
 Group:		Development/X11
 Source:		http://xorg.freedesktop.org/releases/individual/app/%{name}-%{version}.tar.bz2
@@ -23,8 +23,7 @@ Intranet and to enforce a server connection policy.
 %setup -q -n %{name}-%{version}
 
 %build
-%configure2_5x	--x-includes=%{_includedir}\
-		--x-libraries=%{_libdir}
+%configure2_5x
 
 %make
 
