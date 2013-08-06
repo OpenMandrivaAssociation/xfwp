@@ -1,14 +1,14 @@
 Name:		xfwp
-Version:	1.0.2
-Release:	4
+Version:	1.0.3
+Release:	1
 Summary:	X firewall proxy
 Group:		Development/X11
-Source:		http://xorg.freedesktop.org/releases/individual/app/%{name}-%{version}.tar.bz2
+Source0:	http://xorg.freedesktop.org/releases/individual/app/%{name}-%{version}.tar.bz2
 License:	MIT
 
-BuildRequires: pkgconfig(ice) >= 1.0.0
-BuildRequires: pkgconfig(x11) >= 1.0.0
-BuildRequires: x11-util-macros >= 1.0.1
+BuildRequires:	pkgconfig(ice) >= 1.0.0
+BuildRequires:	pkgconfig(x11) >= 1.0.0
+BuildRequires:	pkgconfig(util-macros)
 
 %description
 The X firewall proxy (xfwp) is an application layer gateway proxy that
@@ -19,22 +19,16 @@ mechanism both to hide the addresses of X servers located on the
 Intranet and to enforce a server connection policy.
 
 %prep
-%setup -q -n %{name}-%{version}
+%setup -q
 
 %build
 %configure2_5x
-
 %make
 
 %install
-rm -rf %{buildroot}
 %makeinstall_std
 
-%clean
-rm -rf %{buildroot}
-
 %files
-%defattr(-,root,root)
 %{_bindir}/xfwp
 %{_mandir}/man1/xfwp.1*
 
