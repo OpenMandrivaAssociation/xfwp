@@ -8,7 +8,7 @@ License:	MIT
 
 BuildRequires:	pkgconfig(ice) >= 1.0.0
 BuildRequires:	pkgconfig(x11) >= 1.0.0
-BuildRequires:	pkgconfig(util-macros)
+BuildRequires:	pkgconfig(xorg-macros)
 
 %description
 The X firewall proxy (xfwp) is an application layer gateway proxy that
